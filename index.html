@@ -284,66 +284,48 @@
 
     <!-- ==================== 判定プログラム ==================== -->
 
-    <script>
+   <script>
 
-        /*
-         * 各問題の正解をここに書く
-         *
-         * 第1問 → answers[1]
-         * 第2問 → answers[2]
-         * 第3問 → answers[3]
-         * 第4問 → answers[4]
-         * 第5問 → answers[5]
-         */
-
-        const answers = {
-            1: ["すもう","お相撲さん","相撲","スモウ","相撲取り"],
-            2: ["酒","お酒","さけ",""],
-            3: ["パイナップル","pineapple","パインアップル","ぱいなっぷる","鳳梨"],
-            4: ["柴犬","しばいぬ","しばけん",],
-            5: ["臨機応変"]
-        };
+    const answers = {
+        1: ["すもう", "お相撲さん", "相撲", "スモウ", "相撲取り"],
+        2: ["酒", "お酒", "さけ"],
+        3: ["パイナップル", "pineapple", "パインアップル", "ぱいなっぷる", "鳳梨"],
+        4: ["柴犬", "しばいぬ", "しばけん"],
+        5: ["臨機応変"]
+    };
 
 
-        /*
-         * 判定するプログラム
-         *
-         * 例えば第1問のボタンを押すと
-         * checkAnswer(1)
-         * が実行される
-         */
+    function checkAnswer(questionNumber) {
 
-        function checkAnswer(questionNumber) {
+        // 入力欄を取得
+        const input =
+            document.getElementById("answer" + questionNumber);
 
-            // 対応する入力欄を取得
-            const input =
-                document.getElementById("answer" + questionNumber);
+        // 入力された文字を取得
+        const userAnswer = input.value.trim();
 
-            // 入力された文字を取得
-            const userAnswer = input.value.trim();
+        // 正解の候補を取得
+        const correctAnswers = answers[questionNumber];
 
-            // 正解を取得
-            const correctAnswer = answers[questionNumber];
-
-            // 判定結果を表示する場所を取得
-            const result =
-                document.getElementById("result" + questionNumber);
+        // 判定結果を表示する場所を取得
+        const result =
+            document.getElementById("result" + questionNumber);
 
 
-            // 正解判定
-            if (userAnswer === correctAnswer) {
+        // 正解候補の中に入力された答えがあるか調べる
+        if (correctAnswers.includes(userAnswer)) {
 
-                result.textContent = "正解！";
+            result.textContent = "正解！";
 
-            } else {
+        } else {
 
-                result.textContent = "不正解。";
-
-            }
+            result.textContent = "不正解。";
 
         }
 
-    </script>
+    }
+
+</script>
 
 </body>
 </html>
