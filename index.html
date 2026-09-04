@@ -31,7 +31,7 @@
             border-radius: 12px;
         }
 
-        /* ヒントの表示部分 */
+        /* ヒント・正解の表示部分 */
         details {
             margin: 10px 0;
             padding: 10px;
@@ -79,55 +79,51 @@
 
         <h2>第1問(一部改変)</h2>
 
-        <!-- 問題文をここに書く -->
         <p>
             牛にお酢をかけると、すると大きな声をあげながら何かに変身しました。牛は何になった？
         </p>
 
-        <!-- ヒント1 -->
         <details>
             <summary>ヒント1</summary>
             酢を頭からかけました。
         </details>
 
-        <!-- ヒント2 -->
         <details>
             <summary>ヒント2</summary>
             '牛は鳴き声をあげながら'がヒントです。
         </details>
 
-        <!-- ヒント3 -->
         <details>
             <summary>ヒント3</summary>
             答えはあるスポーツ、あるいはそれをする人です。
         </details>
 
-        <!-- 解答入力欄 -->
         <input
             type="text"
             id="answer1"
             placeholder="答えを入力してください"
         >
 
-        <!-- 判定ボタン -->
         <button onclick="checkAnswer(1)">
             判定
         </button>
 
-        <!-- 判定結果を表示する場所 -->
         <p id="result1" class="result"></p>
+
+        <!-- 正解と解説 -->
         <details>
             <summary>正解を見る</summary>
 
-               <p>正解：ここに正解</p>
+            <p>正解：相撲</p>
 
-               <p>
+            <p>
                 解説：<br>
-                ここに解説を書きます。<br>
-                ここで改行できます。
-               </p>
+                牛の鳴き声である「モー」と、
+                頭からお酢をかけるという状況から「酢＋モー」→「相撲」を連想できますよね。
+            </p>
 
         </details>
+
     </div>
 
 
@@ -153,7 +149,7 @@
 
         <details>
             <summary>ヒント3</summary>
-            大人とは、18歳ではな20歳以上の人をさします。
+            大人とは、18歳ではなく20歳以上の人をさします。
         </details>
 
         <input
@@ -168,6 +164,20 @@
 
         <p id="result2" class="result"></p>
 
+        <!-- 正解と解説 -->
+        <details>
+            <summary>正解を見る</summary>
+
+            <p>正解：酒</p>
+
+            <p>
+                解説：<br>
+                ”水割り”とか”ロック”をか聞きますよね。<br>
+                水やソーダなどを加えても、お酒そのものが物理的に割れているわけではありません。
+            </p>
+
+        </details>
+
     </div>
 
 
@@ -180,7 +190,12 @@
         <p>
             この画像が示しているものとは？
         </p>
-        <img src="なぞなぞ-3.jpeg" alt="第三問の写真" style="max-width: 100%; height: auto;">
+
+        <img
+            src="なぞなぞ-3.jpeg"
+            alt="第三問の写真"
+            style="max-width: 100%; height: auto;"
+        >
 
         <details>
             <summary>ヒント1</summary>
@@ -208,6 +223,20 @@
         </button>
 
         <p id="result3" class="result"></p>
+
+        <!-- 正解と解説 -->
+        <details>
+            <summary>正解を見る</summary>
+
+            <p>正解：パイナップル</p>
+
+            <p>
+                解説：<br>
+                π＋7（個）＋pull（引っ張る）からパイナップルとなります。<br>
+                パインアップルでも可としています。
+            </p>
+
+        </details>
 
     </div>
 
@@ -249,6 +278,20 @@
 
         <p id="result4" class="result"></p>
 
+        <!-- 正解と解説 -->
+        <details>
+            <summary>正解を見る</summary>
+
+            <p>正解：柴犬</p>
+
+            <p>
+                解説：<br>
+                「緑が多い」を「芝」と考え、
+                「芝＋犬」で「柴犬」とするものです。
+            </p>
+
+        </details>
+
     </div>
 
 
@@ -261,7 +304,12 @@
         <p>
             この画像が示すものは何？
         </p>
-        <img src="なぞなぞ-5.jpeg" alt="第五問の写真"style="max-width: 100%; height: auto;">
+
+        <img
+            src="なぞなぞ-5.jpeg"
+            alt="第五問の写真"
+            style="max-width: 100%; height: auto;"
+        >
 
         <details>
             <summary>ヒント1</summary>
@@ -290,53 +338,68 @@
 
         <p id="result5" class="result"></p>
 
+        <!-- 正解と解説 -->
+        <details>
+            <summary>正解を見る</summary>
+
+            <p>正解：臨機応変</p>
+
+            <p>
+                解説：<br>
+            　　”き”が輪になって並んでいることから’輪’、そして’き’。また、左は王へんがあるのでそれらを組み合わせて<br>
+                臨機応変（りん＋き＋おうへん）となります。<br>
+                かなりの難問なので解けたら素晴らしいですよ。
+            </p>
+
+        </details>
+
     </div>
 
 
     <!-- ==================== 判定プログラム ==================== -->
 
-   <script>
+    <script>
 
-    const answers = {
-        1: ["すもう", "お相撲さん", "相撲", "スモウ", "相撲取り"],
-        2: ["酒", "お酒", "さけ"],
-        3: ["パイナップル", "pineapple", "パインアップル", "ぱいなっぷる", "鳳梨"],
-        4: ["柴犬", "しばいぬ", "しばけん"],
-        5: ["臨機応変"]
-    };
-
-
-    function checkAnswer(questionNumber) {
-
-        // 入力欄を取得
-        const input =
-            document.getElementById("answer" + questionNumber);
-
-        // 入力された文字を取得
-        const userAnswer = input.value.trim();
-
-        // 正解の候補を取得
-        const correctAnswers = answers[questionNumber];
-
-        // 判定結果を表示する場所を取得
-        const result =
-            document.getElementById("result" + questionNumber);
+        const answers = {
+            1: ["すもう", "お相撲さん", "相撲", "スモウ", "相撲取り"],
+            2: ["酒", "お酒", "さけ"],
+            3: ["パイナップル", "pineapple", "パインアップル", "ぱいなっぷる", "鳳梨"],
+            4: ["柴犬", "しばいぬ", "しばけん"],
+            5: ["臨機応変"]
+        };
 
 
-        // 正解候補の中に入力された答えがあるか調べる
-        if (correctAnswers.includes(userAnswer)) {
+        function checkAnswer(questionNumber) {
 
-            result.textContent = "正解！";
+            // 入力欄を取得
+            const input =
+                document.getElementById("answer" + questionNumber);
 
-        } else {
+            // 入力された文字を取得
+            const userAnswer = input.value.trim();
 
-            result.textContent = "不正解。";
+            // 正解の候補を取得
+            const correctAnswers = answers[questionNumber];
+
+            // 判定結果を表示する場所を取得
+            const result =
+                document.getElementById("result" + questionNumber);
+
+
+            // 正解候補の中に入力された答えがあるか調べる
+            if (correctAnswers.includes(userAnswer)) {
+
+                result.textContent = "正解！";
+
+            } else {
+
+                result.textContent = "不正解。";
+
+            }
 
         }
 
-    }
-
-</script>
+    </script>
 
 </body>
 </html>
