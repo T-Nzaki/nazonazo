@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- スマホでも画面幅に合わせて表示する設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>なぞなぞクイズ-全五問-</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            line-height: 1.7;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* 各問題を囲む枠 */
+        .question {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        }
+
+        /* ヒントの表示部分 */
+        details {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* 解答入力欄 */
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* 判定ボタン */
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* 判定結果 */
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h1>なぞなぞクイズ-全五問-</h1>
+
+
+    <!-- ==================== 第1問 ==================== -->
+
+    <div class="question">
+
+        <h2>第1問(一部改変)</h2>
+
+        <!-- 問題文をここに書く -->
+        <p>
+            牛にお酢をかけると、すると大きな声をあげながら何かに変身しました。牛は何になった？
+        </p>
+
+        <!-- ヒント1 -->
+        <details>
+            <summary>ヒント1</summary>
+            酢を頭からかけました。
+        </details>
+
+        <!-- ヒント2 -->
+        <details>
+            <summary>ヒント2</summary>
+            '牛は鳴き声をあげながら'がヒントです。
+        </details>
+
+        <!-- ヒント3 -->
+        <details>
+            <summary>ヒント3</summary>
+            答えはあるスポーツ、あるいはそれをする人です。
+        </details>
+
+        <!-- 解答入力欄 -->
+        <input
+            type="text"
+            id="answer1"
+            placeholder="答えを入力してください"
+        >
+
+        <!-- 判定ボタン -->
+        <button onclick="checkAnswer(1)">
+            判定
+        </button>
+
+        <!-- 判定結果を表示する場所 -->
+        <p id="result1" class="result"></p>
+
+    </div>
+
+
+    <!-- ==================== 第2問 ==================== -->
+
+    <div class="question">
+
+        <h2>第2問</h2>
+
+        <p>
+            大人が足してるのに 割った というものは何？
+        </p>
+
+        <details>
+            <summary>ヒント1</summary>
+            もちろん、割っても小さくなりません。
+        </details>
+
+        <details>
+            <summary>ヒント2</summary>
+            いろんな種類のものを足していきます。それでも割ったと当然言います。
+        </details>
+
+        <details>
+            <summary>ヒント3</summary>
+            大人とは、18歳ではな20歳以上の人をさします。
+        </details>
+
+        <input
+            type="text"
+            id="answer2"
+            placeholder="答えを入力してください"
+        >
+
+        <button onclick="checkAnswer(2)">
+            判定
+        </button>
+
+        <p id="result2" class="result"></p>
+
+    </div>
+
+
+    <!-- ==================== 第3問 ==================== -->
+
+    <div class="question">
+
+        <h2>第3問</h2>
+
+        <p>
+            この画像が示しているものとは？
+        </p>
+        <img src="なぞなぞ-3.jpeg" alt="第三問の写真" style="max-width: 100%; height: auto;">
+
+        <details>
+            <summary>ヒント1</summary>
+            答えは三つの要素から構成されます。
+        </details>
+
+        <details>
+            <summary>ヒント2</summary>
+            答えは一般的には6文字の果物です
+        </details>
+
+        <details>
+            <summary>ヒント3</summary>
+            答えを構成する三つの要素のうち、一つは英単語です。
+        </details>
+
+        <input
+            type="text"
+            id="answer3"
+            placeholder="答えを入力してください"
+        >
+
+        <button onclick="checkAnswer(3)">
+            判定
+        </button>
+
+        <p id="result3" class="result"></p>
+
+    </div>
+
+
+    <!-- ==================== 第4問 ==================== -->
+
+    <div class="question">
+
+        <h2>第4問</h2>
+
+        <p>
+            'けん'は'けん'でも、緑が多くて走り回る'けん'は？
+        </p>
+
+        <details>
+            <summary>ヒント1</summary>
+            緑が多いを言い換えると？
+        </details>
+
+        <details>
+            <summary>ヒント2</summary>
+            'けん'は走り回る、動ける'けん'です。
+        </details>
+
+        <details>
+            <summary>ヒント3</summary>
+            '緑が多い'を〇〇とすると、'〇〇けん'が答えになります。
+        </details>
+
+        <input
+            type="text"
+            id="answer4"
+            placeholder="答えを入力してください"
+        >
+
+        <button onclick="checkAnswer(4)">
+            判定
+        </button>
+
+        <p id="result4" class="result"></p>
+
+    </div>
+
+
+    <!-- ==================== 第5問 ==================== -->
+
+    <div class="question">
+
+        <h2>第5問</h2>
+
+        <p>
+            この画像が示すものは何？
+        </p>
+        <img src="なぞなぞ-5.jpeg" alt="第五問の写真"style="max-width: 100%; height: auto;">
+
+        <details>
+            <summary>ヒント1</summary>
+            ’き’の数は重要ではありません。
+        </details>
+
+        <details>
+            <summary>ヒント2</summary>
+            答えは漢字一文字ではありません。
+        </details>
+
+        <details>
+            <summary>ヒント3</summary>
+            答えは四字熟語です。
+        </details>
+
+        <input
+            type="text"
+            id="answer5"
+            placeholder="答えを入力してください"
+        >
+
+        <button onclick="checkAnswer(5)">
+            判定
+        </button>
+
+        <p id="result5" class="result"></p>
+
+    </div>
+
+
+    <!-- ==================== 判定プログラム ==================== -->
+
+    <script>
+
+        /*
+         * 各問題の正解をここに書く
+         *
+         * 第1問 → answers[1]
+         * 第2問 → answers[2]
+         * 第3問 → answers[3]
+         * 第4問 → answers[4]
+         * 第5問 → answers[5]
+         */
+
+        const answers = {
+            1: ["すもう","お相撲さん","相撲","スモウ","相撲取り"],
+            2: ["酒","お酒","さけ",""],
+            3: ["パイナップル","pineapple","パインアップル","ぱいなっぷる","鳳梨"],
+            4: ["柴犬","しばいぬ","しばけん",],
+            5: ["臨機応変"]
+        };
+
+
+        /*
+         * 判定するプログラム
+         *
+         * 例えば第1問のボタンを押すと
+         * checkAnswer(1)
+         * が実行される
+         */
+
+        function checkAnswer(questionNumber) {
+
+            // 対応する入力欄を取得
+            const input =
+                document.getElementById("answer" + questionNumber);
+
+            // 入力された文字を取得
+            const userAnswer = input.value.trim();
+
+            // 正解を取得
+            const correctAnswer = answers[questionNumber];
+
+            // 判定結果を表示する場所を取得
+            const result =
+                document.getElementById("result" + questionNumber);
+
+
+            // 正解判定
+            if (userAnswer === correctAnswer) {
+
+                result.textContent = "正解！";
+
+            } else {
+
+                result.textContent = "不正解。";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
